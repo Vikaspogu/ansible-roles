@@ -2,7 +2,7 @@
 - name: Check if the '{{ vcenter.folder }}' folder already exists
   command: "govc folder.info '/{{ vcenter.datacenter }}/vm/{{ vcenter.folder }}'" # noqa 301
   register: folder_exists
-  ignore_errors: yes
+  ignore_errors: true
 
 - name: Fail if Folder does not exist and create = False
   fail:
